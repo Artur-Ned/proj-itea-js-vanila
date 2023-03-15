@@ -36,3 +36,8 @@ for (const iterator of arrNameTest) {
 
 
 // console.log(Math.floor(Math.random() * 1000) + 500);
+
+//  вариант
+// function getRandomInt(min, max) {
+//             return Math.floor(Math.random() * (max - min + 1)) + min;
+//         }
