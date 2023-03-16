@@ -30,8 +30,8 @@ let team = {};
 function createTeam() {
     for (let i = 0; i < arrNameTest.length; i++) {
         team[`woker${i}`] = new Object;
-        team[`woker${i}`].name = arrNameTest[i];
-        // team[`woker${i}`].name = arrName[i];
+        // team[`woker${i}`].name = arrNameTest[i];
+        team[`woker${i}`].name = arrName[i];
         team[`woker${i}`].position = arrVacans[i];
     }
 }
@@ -105,7 +105,7 @@ function showTeam() {
     }}
     
 
-// getNames();
+getNames();
 createTeam();
 setSalary();
 SetMetodTellAboutYourSelf();
