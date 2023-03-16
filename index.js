@@ -19,7 +19,7 @@ function getNames() {
     }
 };
 // getNames();
-// console.log(arrName);
+
 
 // 2. Создать объект team в котором будут храниться новые
 //       объекты-сотрудники с параметрами name и position, данные для этих свойств
@@ -30,15 +30,13 @@ let team = {};
 function createTeam() {
     for (let i = 0; i < arrNameTest.length; i++) {
         team[`woker${i}`] = new Object;
-        team[`woker${i}`].name = arrNameTest[i];
-        // team[`woker${i}`].name = arrName[i];
+        // team[`woker${i}`].name = arrNameTest[i];
+        team[`woker${i}`].name = arrName[i];
         team[`woker${i}`].position = arrVacans[i];
     }
-   
-    //    console.log(team);  
 }
 
-createTeam();
+// createTeam();
  
 
 // 3. Добавить сотрудникам зарплаты (свойство salary)
@@ -53,27 +51,84 @@ createTeam();
 //       строка отсутсвует вернет -1. //Регистр имеет значение, по этому строка
 //       "junior" вернет -1
 
-// function setSalary() {
-//     for (const key in team) {
-//     if (Object.hasOwnProperty.call(team, key)) {
-//         const element = team[key];    
-//         element["salary"] = 5;
-//         console.log(element);        
-//     }
-        
+
+
+function setSalary() {
+    const getRandomNum = (min, max) => {
+            return Math.floor(Math.random() * (max - min) + min)
+    };
     
-// }
-// console.log(team);}
-
-
-for (const key in team) {
-    let elem = team[key]["position"];  
-    console.log(elem.indexOf('Junior'))
-    // if (str.indexOf('Junior') == 0) { };
-
-
+    for (const key in team) {
+        let obj = team[key];
+        // console.log(obj);
+        let elem = team[key]["position"];
+        // obj["salary"] = 5;
+        // console.log(elem.indexOf('Junior'))
+        if (elem.indexOf('Junior') == 0) {obj["salary"] = getRandomNum(500, 1000)} else
+        if (elem.indexOf('Middle') == 0) {obj["salary"] = getRandomNum(1500, 2000)} else
+        if (elem.indexOf('Senior') == 0) { obj["salary"] = getRandomNum(2500, 3000)}
+        else { obj["salary"] = getRandomNum(4000, 4500) }
+        }
 }
+// setSalary();
 
+
+// 4 Добавить каждому сотруднику метод
+//       tellAboutYourSelf(), который будет сообщать информацию о пользователе
+//       (например "Меня зовут John и я - Project manager. Я зарабатываю 4863$.").
+
+// console.log(`Имя - ${this.name} - должность ${this.position}- зарплата ${this.salary}`)
+function SetMetodTellAboutYourSelf() {
+    for (const key in team) {
+    let obj = team[key];
+    obj.TellAboutYourSelf = function (){console.log(`Меня зовут - ${obj.name} и я ${obj.position}. Я зарабытваю ${obj.salary}`);}
+    }
+};
+// SetMetodTellAboutYourSelf();
+
+// team.woker1.TellAboutYourSelf();
+// team.woker2.TellAboutYourSelf();
+
+// 5) Добавить объекту team метод showTeam(), который будет выводить
+//       информацию о всех сотрудниках в консоль в формате: "John - Project
+//       manager. Зарплата - 4863$."* Для удобства создайте по порядку все
+//       необходимые функции и в конце сделать вызов этих функций в логическом
+//       порядке. Например: getNames(); createTeam(); setSalary(); создание цикла
+//       для установки метода tellAboutYourSelf(); создание team.showTeam =
+//       function() {...}; вызов метода showTeam();
+
+function showTeam() {
+    for (const key in team) { 
+        // console.log(key);
+        let obj = team[key];
+        obj.TellAboutYourSelf();  
+    }}
+    
+
+getNames();
+createTeam();
+setSalary();
+SetMetodTellAboutYourSelf();
+showTeam();
+// console.log(team);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// point.show_coords = function () {
+//         console.log("x = " + point.x + " y = " + point.y);
+//       };
 
 
 //  dlya 3 parts
