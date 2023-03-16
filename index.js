@@ -9,13 +9,10 @@ let arrVacans = ['Junior developer', 'Middle developer', 'Senior developer', 'Ju
 let arrNameTest  = ['Vano', 'Jora','Senya','Leonid','Vasya','Oktyabrina', 'Senya'];
 let count = 7;
 function getNames() { 
-    for (let i = 0; i < 7; i++) {
-        
-        let name = prompt(`Введите поочерёдно ${count} имён`)
-        
+    for (let i = 0; i < 7; i++) {        
+        let name = prompt(`Введите поочерёдно ${count} имён`)        
         count--; 
-        arrName.push(name);
-        
+        arrName.push(name);        
     }
 };
 // getNames();
@@ -56,8 +53,7 @@ function createTeam() {
 function setSalary() {
     const getRandomNum = (min, max) => {
             return Math.floor(Math.random() * (max - min) + min)
-    };
-    
+    };    
     for (const key in team) {
         let obj = team[key];
         // console.log(obj);
