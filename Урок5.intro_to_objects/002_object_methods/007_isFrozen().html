@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+	// Метод Object.isFrozen() определяет, был ли объект заморожен.
+
+	var obj = {};
+	obj.prop = 'string';
+	console.log(obj);
+	console.log(Object.isFrozen(obj));
+
+	Object.freeze(obj);
+	console.log(Object.isFrozen(obj));
+	</script>
+</head>
+<body>
+
+</body>
+</html>

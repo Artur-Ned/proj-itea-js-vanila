@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <!-- console.log(), console.error(), console.warn() и console.info() - этим методам можно передавать один или несколько параметров. Система вычисляет значение каждого из них и объединяет все результаты в строку, части которой разделены пробелами. В случае с объектами или массивами эти команды позволяют выводить их в таком виде, который позволяет просматривать их содержимое.  -->
+  <script type="text/javascript">
+      var myObj = {
+        a: 1,
+        b: 2,
+        c: 3
+      };
+      setInterval(function(){
+        console.log('log', myObj, new Date());
+
+        console.error('error', myObj, new Date());
+
+        console.warn('warn', myObj, new Date());
+
+        console.info('info', myObj, new Date());
+      }, 2000)
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>

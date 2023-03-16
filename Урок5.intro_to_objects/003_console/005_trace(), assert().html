@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <!-- Методы console.trace() и console.assert() позволят выводить из места их вызова информацию о стеке. Метод console.assert() похож на console.trace(), разница между ними заключается в том, что console.assert() выведет данные лишь в том случае, если не выполнится переданное ему условие. Т.е. записывает сообщение об ошибке в консоль в случае если выражение ложь. Если выражение истинно - ничего не происходит.-->
+  <script type="text/javascript">
+      function lesserThan(a,b){
+          console.assert(a < b, {
+              "message":"a is not lesser than b",
+              "a": a,
+              "b": b
+          });
+      }
+
+      lesserThan(6, 5);
+      console.trace("End");
+  </script>
+</head>
+<body>
+
+</body>
+</html>

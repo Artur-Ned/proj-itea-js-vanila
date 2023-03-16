@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <!-- Метод console.count() позволяет подсчитывать количество собственных вызовов и выводить его в консоль с заданной меткой. Метод console.time() позволяет запустить именованный таймер (имя передаётся ему в качестве параметра, на одной странице может присутствовать до 10000 таймеров). Для того чтобы остановить конкретный таймер, используется команда console.timeEnd() с меткой таймера, передаваемой в качестве параметра. Она останавливает таймер и выводит время его работы в консоль.  -->
+  <script type="text/javascript">
+      'use strict';
+
+      console.time('total');
+      console.time('init arr');
+      const arr = new Array(10);
+      console.timeEnd('init arr');
+
+      for(let i = 0; i < arr.length; i++){
+          arr[i] = new Object();
+          const _type = (i % 2 === 0) ? 'even' : 'odd';
+          console.count('_added');
+      }
+
+      console.timeEnd('total');
+  </script>
+</head>
+<body>
+
+</body>
+</html>

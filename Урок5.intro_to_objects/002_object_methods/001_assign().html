@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+	// Метод Object.assign() используется для копирования значений всех собственных перечисляемых свойств из одного или более исходных объектов в целевой объект. После копирования он возвращает целевой объект. Метод копирует из исходных объектов в целевой объект только перечисляемые и собственные свойства.
+
+	// Object.assign(target, ...sources)
+
+	// target - Целевой объект.
+	// sources - Исходные объекты.
+
+	var obj = { 
+		a: 1, 
+		b: function(){console.log(this.a)} 
+	};
+	var copy = Object.assign({}, obj);
+	console.log(copy);
+
+	console.log('***********');
+
+	var o1 = { a: 1 };
+	var o2 = { b: 2 };
+	var o3 = { c: 3 };
+
+	var obj = Object.assign({}, o1, o2, o3);
+	console.log(obj);
+	</script>
+</head>
+<body>
+
+</body>
+</html>

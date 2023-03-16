@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <!-- Метод console.group() позволяет собирать серии вызовов console.log() (а также — других подобных методов) в группы, содержимое которых можно сворачивать и разворачивать. Пользоваться этим методом очень просто: после вызова console.group() (или после console.groupCollapsed(), если группу требуется вывести сразу в свёрнутом виде) нужно поместить все вызовы console.log(), которые надо сгруппировать. Затем, в конце набора команд, которые требуется сгруппировать, надо поместить команду console.groupEnd(). Рассмотри пример.  -->
+  <script type="text/javascript">
+      'use strict';
+      function doSomething(obj){
+          console.groupCollapsed('doSomething Profile');
+          const _data = new Date();
+          console.log('evaluating data: ', _data);
+
+
+          const _fullName = `${obj.firstName} ${obj.lastName}.`
+
+
+          console.log('fullName: ', _fullName);
+          const _id = Math.random();
+          console.log('id: ', _id);
+          console.groupEnd();
+      };
+
+      let human = {
+        firstName: "Brendan", 
+        lastName: "Eich"}
+
+      doSomething(human);
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>
